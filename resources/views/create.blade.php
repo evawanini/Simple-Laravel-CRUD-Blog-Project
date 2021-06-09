@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="flex justify-center content-center">
     <form action="/blogs/" method="post">
             @csrf
             @if ($errors->any())
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mt-2 mb-2 rounded relative" role="alert">
+                <div class="uppercase text-red-700 px-4 py-3 mt-2 mb-2 rounded relative" role="alert">
                     Please fill all fields!
                 </div>
             @endif

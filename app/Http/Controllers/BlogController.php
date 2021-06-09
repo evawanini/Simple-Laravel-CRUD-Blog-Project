@@ -34,19 +34,13 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Blog $blogs)
     {
-        request()->validate([
+        Blog::create(request()->validate([
             'id' => 'required',
             'name' => 'required',
             'description' => 'required'
-        ]);
-
-        $blogs = Blog::create([
-            'id' => request('id'),
-            'name' => request('name'),
-            'description' => request('description')
-        ]);
+        ]));
 
         return redirect('/blogs', ['blogs' => $blogs]);
     }
@@ -84,17 +78,11 @@ class BlogController extends Controller
      */
     public function update(Blog $blog)
     {
-        request()->validate([
+        $blog->update(request()->validate([
             'id' => 'required',
             'name' => 'required',
             'description' => 'required'
-        ]);
-
-        $blog->update([
-            'id' => request('id'),
-            'name' => request('name'),
-            'description' => request('description'),
-        ]);
+        ]));
 
         return redirect('/blogs');
     }
