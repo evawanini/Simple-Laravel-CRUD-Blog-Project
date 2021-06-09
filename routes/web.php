@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/blogs', [BlogController::class, 'index']);
+Route::post('/blogs', [BlogController::class, 'store']);
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
+Route::get('/blogs/{blog}', [BlogController::class, 'show']);
+Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+Route::put('/blogs/{blog}', [BlogController::class, 'update']);
+Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
