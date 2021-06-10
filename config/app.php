@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => '32charshere',
+    'key' => 'APP_KEY',
 
     'cipher' => 'AES-256-CBC',
 
