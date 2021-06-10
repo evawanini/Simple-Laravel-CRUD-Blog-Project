@@ -42,7 +42,7 @@ class BlogController extends Controller
             'description' => 'required'
         ]));
 
-        return redirect('/blogs', ['blogs' => $blogs]);
+        return redirect('/blogs');
     }
 
     /**
