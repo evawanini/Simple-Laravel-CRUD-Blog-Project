@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <a href="{{ route('blog.create') }}" class="btn btn-primary bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full top-0 right-0 h-16 w-16">
+  <a href="{{ route('dashboard') }}" class="btn btn-primary bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full top-0 right-0 h-16 w-16">
     Create Blog</a>
   <br>
   <hr>
