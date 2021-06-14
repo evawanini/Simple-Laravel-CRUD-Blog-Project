@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::post('/blogs', [BlogController::class, 'store']);
-Route::get('/blogs/create', [BlogController::class, 'create'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [BlogController::class, 'create'])->middleware(['auth'])->name('dashboard');
 //Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
 Route::get('/blogs/{blog}', [BlogController::class, 'show']);
 Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
